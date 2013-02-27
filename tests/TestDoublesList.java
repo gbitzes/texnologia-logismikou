@@ -51,11 +51,52 @@ public class TestDoublesList {
 
 	}
 
+	/* Test add value after index i. Owner: bitzesmichail */
+	static void testaddNumAfter() {
+		DoublesList list = new DoublesList();
+
+		for(int i = 0; i <= 200; i++)
+			list.insert(i, i);
+
+		list.addNumAfter(100, 453.0);
+
+		double[] array = list.toArray();
+		for(int i = 0; i <= 99; i++) {
+			assert array[i] == i;
+		}
+
+		for(int i = 101; i <= 200; i++) {
+			assert array[i] == i + 453.0;
+		}
+	}
+
+	/* It attempt to insert at invalid positions, so it should throw exceptions. Owner: bitzesmichail */
+	static void testFaultyIndexInaddNumAfter() {
+		DoublesList list = new DoublesList();
+		try {
+			list.addNumAfter(-1, 453.0); // should throw Exception
+			assert false;
+		}
+		catch(IllegalArgumentException e) {
+		}
+		
+		try {
+			list.insert(0, 0.1);
+			list.insert(1, 0.2);
+			list.insert(5, 0.3); // should throw Exception
+			assert false;
+		}
+		catch(IllegalArgumentException e) {
+		}
+	}
+
 	/* Runs all tests */
 	public static void main(String[] args) {
 		testInsertion();
 		testFaultyInsertion();
 		testManyInsertions();
+		testaddNumAfter();
+		testFaultyIndexInaddNumAfter();
 
 		System.out.println("All tests run OK.");
 	}

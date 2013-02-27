@@ -64,7 +64,18 @@ public class DoublesList {
 
 	}
 
+	public void addNumAfter(int index, double value) throws IllegalArgumentException {
+		if(index < 0)
+			throw new IllegalArgumentException("Attempted to insert at a negative position: " + index);
 
+		if(index > size )
+			throw new IllegalArgumentException("Attempted to insert at a non-existent position: " + index);
+
+		for(int i = index+1; i < size; i++)	{
+			list[i] += value;
+		}
+		
+	}
 
 
 }
