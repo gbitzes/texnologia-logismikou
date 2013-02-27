@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-# -e so the script exits immediatelly after a compile error
+# -e so the script exits immediately after a compile error
 
 echo "Compiling TestDoublesList.java..."
 javac tests/TestDoublesList.java
