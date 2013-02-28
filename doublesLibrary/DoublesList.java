@@ -64,6 +64,7 @@ public class DoublesList {
 
 	}
 
+	/* Add value to all elements after index i. Owner: bitzesmichail */
 	public void addNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
 			throw new IllegalArgumentException("Attempted to insert at a negative position: " + index);
@@ -77,6 +78,7 @@ public class DoublesList {
 
 	}
 
+	/* Substract value from all elements after index i and remove zero-value elements. Owner: bitzesmichail */
 	public void subtractNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
 			throw new IllegalArgumentException("Attempted to insert at a negative position: " + index);

@@ -18,7 +18,7 @@ public class TestDoublesList {
 		assert array.length == 3 && array[0] == 0.5 && array[1] == 0.1 && array[2] == 0.2;
 	}
 
-	/* It attempt to insert at invalid positions, so it should throw exceptions. Owner: Giorgos */
+	/* It attempts to insert at invalid positions, so it should throw exceptions. Owner: Giorgos */
 	static void testFaultyInsertion() {
 		DoublesList list = new DoublesList();
 		try {
