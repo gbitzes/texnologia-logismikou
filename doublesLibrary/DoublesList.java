@@ -69,7 +69,7 @@ public class DoublesList {
 		if(index < 0)
 			throw new IllegalArgumentException("Attempted add at a negative index: " + index);
 
-		if(index > size )
+		if(index >= size )
 			throw new IllegalArgumentException("Attempted add at a non-existent index: " + index);
 
 		for(int i = index+1; i < size; i++)	{
@@ -78,12 +78,12 @@ public class DoublesList {
 
 	}
 
-	/* Substract value from all elements after index i and remove zero-value elements. Owner: bitzesmichail */
+	/* Subtract value from all elements after index i and remove zero-value elements. Owner: bitzesmichail */
 	public void subtractNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
 			throw new IllegalArgumentException("Attempted to substract from a negative index: " + index);
 
-		if(index > size )
+		if(index >= size )
 			throw new IllegalArgumentException("Attempted to substract from a non-existent index: " + index);
 
 		for(int i = index+1; i < size; i++)	{
