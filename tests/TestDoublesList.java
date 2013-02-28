@@ -138,6 +138,8 @@ public class TestDoublesList {
 		}
 	}
 
+	/* Test removal of value 0.0 starting at all elements except the first(index 0). 
+	   Owner: bitzesmichail */
 	static void test3subtractNumAfter() {
 		DoublesList list = new DoublesList();
 
