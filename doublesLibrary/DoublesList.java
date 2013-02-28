@@ -64,27 +64,27 @@ public class DoublesList {
 
 	}
 
-	/* Add value to elements starting from index i. Owner: bitzesmichail */
+	/* Add value to all array elements starting at position index. Owner: bitzesmichail */
 	public void addNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
-			throw new IllegalArgumentException("Attempted add at a negative index: " + index);
+			throw new IllegalArgumentException("Attempted to add starting at a negative index: " + index);
 
 		if(index >= size )
-			throw new IllegalArgumentException("Attempted add at a non-existent index: " + index);
+			throw new IllegalArgumentException("Attempted to add starting at a non-existent index: " + index);
 
 		for(int i = index; i < size; i++)	{
 			list[i] += value;
 		}
-
 	}
 
-	/* Subtract value from elements starting from index i. Remove the elements that become zero. Owner: bitzesmichail */
+	/* Subtract value from all array elements starting at position index. 
+	   If an element became zero after the subtraction, remove it. Owner: bitzesmichail */
 	public void subtractNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
-			throw new IllegalArgumentException("Attempted to substract from a negative index: " + index);
+			throw new IllegalArgumentException("Attempted to subtract starting at a negative index: " + index);
 
 		if(index >= size )
-			throw new IllegalArgumentException("Attempted to substract from a non-existent index: " + index);
+			throw new IllegalArgumentException("Attempted to subtract starting at a non-existent index: " + index);
 
 		for(int i = index; i < size; i++)	{
 			list[i] -= value;
