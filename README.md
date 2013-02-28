@@ -1,5 +1,7 @@
 ## texnologia-logismikou
 
+Η ομάδα αποτελείται από: Μιχάλης Μπιτζές ( 1115 2004 00 093 ) και Γιώργος Μπιτζές ( 1115 2009 00 121 )
+
 Το repository είναι public και μπορεί να γίνει clone μέσω git clone https://github.com/gbitzes/texnologia-logismikou.git
 
 
