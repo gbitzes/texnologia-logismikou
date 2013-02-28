@@ -64,7 +64,7 @@ public class DoublesList {
 
 	}
 
-	/* Add value to all elements after index i. Owner: bitzesmichail */
+	/* Add value to elements starting from index i. Owner: bitzesmichail */
 	public void addNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
 			throw new IllegalArgumentException("Attempted add at a negative index: " + index);
@@ -72,13 +72,13 @@ public class DoublesList {
 		if(index >= size )
 			throw new IllegalArgumentException("Attempted add at a non-existent index: " + index);
 
-		for(int i = index+1; i < size; i++)	{
+		for(int i = index; i < size; i++)	{
 			list[i] += value;
 		}
 
 	}
 
-	/* Subtract value from all elements after index i and remove zero-value elements. Owner: bitzesmichail */
+	/* Subtract value from elements starting from index i. Remove the elements that become zero. Owner: bitzesmichail */
 	public void subtractNumAfter(int index, double value) throws IllegalArgumentException {
 		if(index < 0)
 			throw new IllegalArgumentException("Attempted to substract from a negative index: " + index);
@@ -86,20 +86,20 @@ public class DoublesList {
 		if(index >= size )
 			throw new IllegalArgumentException("Attempted to substract from a non-existent index: " + index);
 
-		for(int i = index+1; i < size; i++)	{
+		for(int i = index; i < size; i++)	{
 			list[i] -= value;
 		}
 
-		/* create a new list, copy all the elements before index(including the index, 
-		but only the non-zero elements after the index */
+		/* create a new list, copy all the elements before index, 
+		but only the non-zero elements starting at the index */
 		double[] newList = new double[ list.length ];
 
-		for(int i = 0; i <= index; i++) {
+		for(int i = 0; i < index; i++) {
 			newList[i] = list[i];
 		}
-		int newListSize = index + 1;
+		int newListSize = index;
 
-		for(int i = index+1; i < size; i++) {
+		for(int i = index; i < size; i++) {
 			if(list[i] != 0.0) {
 				newList[newListSize] = list[i];
 				newListSize++;

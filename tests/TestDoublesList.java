@@ -51,7 +51,7 @@ public class TestDoublesList {
 
 	}
 
-	/* Test add value after index i. Owner: bitzesmichail */
+	/* Test add value starting at index i. Owner: bitzesmichail */
 	static void testaddNumAfter() {
 		DoublesList list = new DoublesList();
 
@@ -65,7 +65,7 @@ public class TestDoublesList {
 			assert array[i] == i;
 		}
 
-		for(int i = 101; i <= 200; i++) {
+		for(int i = 100; i <= 200; i++) {
 			assert array[i] == i + 453.0;
 		}
 	}
@@ -90,19 +90,18 @@ public class TestDoublesList {
 		}
 	}
 
-	/* Test subtract number after index. Owner: bitzesmichail */
+	/* Test subtract number starting at index. Owner: bitzesmichail */
 	static void testsubtractNumAfter() {
 		DoublesList list = new DoublesList();
 
 		for(int i = 0; i <= 200; i++)
 			list.insert(i, i);
 
-		for(int i = 200; i >= 1; i--)
-			list.subtractNumAfter(i-1, i);
+		for(int i = 200; i >= 0; i--)
+			list.subtractNumAfter(i, i);
 
 		double[] array = list.toArray();
-		assert array.length == 1;
-		assert array[0] == 0.0;
+		assert array.length == 0;
 	}
 
 	/* It attempts to insert at invalid positions, so it should throw exceptions. Owner: bitzesmichail */
